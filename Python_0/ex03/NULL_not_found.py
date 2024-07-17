@@ -1,5 +1,4 @@
 def NULL_not_found(object: any) -> int:
-
     if object is None:
         print("Nothing: None", type(object))
         return 0
@@ -12,7 +11,7 @@ def NULL_not_found(object: any) -> int:
     elif type(object) is str and len(object) == 0:
         print("Empty:", type(object))
         return 0
-    elif type(object) is bool and object == False:
+    elif type(object) is bool and object is False:
         print("Fake: False", type(object))
         return 0
     print("Type not found")
