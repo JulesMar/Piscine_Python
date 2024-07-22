@@ -15,20 +15,3 @@ is true. If function is None, return the items that are true.
             if func(elem):
                 res.append(elem)
     return iter(res)
-
-
-def sort(i):
-    if i < 10:
-        return True
-    else:
-        return False
-
-
-def main():
-    iter = [True, False, True, False, False, True, 1, 0, 9]
-    print(list(filter(None, iter)))
-    print(list(ft_filter(None, iter)))
-
-
-if __name__ == "__main__":
-    main()
