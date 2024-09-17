@@ -15,16 +15,16 @@ Returns:
     """
     if type(height) is not list or type(weight) is not list:
         print("not list")
-        return 0
+        exit()
     if len(height) != len(weight):
         print("not same len")
-        return 0
+        exit()
     if not all(isinstance(elem, (int, float)) for elem in height):
         print("not int or float in height")
-        return 0
+        exit()
     if not all(isinstance(elem, (int, float)) for elem in weight):
         print("not int or float in weight")
-        return 0
+        exit()
     ret = []
     for x, y in zip(height, weight):
         ret.append(y / pow(x, 2))
@@ -46,10 +46,10 @@ Returns:
     """
     if type(bmi) is not list or type(limit) is not int:
         print("wrong type")
-        return 0
+        exit()
     if not all(isinstance(elem, (int, float)) for elem in bmi):
         print("not int or float in bmi")
-        return 0
+        exit()
     ret = []
     for elem in bmi:
         ret.append(elem > limit)
