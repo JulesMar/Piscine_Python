@@ -20,8 +20,10 @@ def main():
     arr_img = ft_load("animal.jpeg")
     print(arr_img)
     arr_img = zoom(arr_img, 400, 400, 1)
-    print(f"New shape after slicing: ({len(arr_img)},\
- {len(arr_img[0])}, {len(arr_img[0][0])}) or (400, 400)")
+    print(arr_img)
+    arr_img = np.transpose(arr_img)[0]
+    print(f"New shape after Transpose: ({len(arr_img)},\
+ {len(arr_img[0])})")
     print(arr_img)
     pyplot.imshow(arr_img, cmap='gray')
     pyplot.show()
