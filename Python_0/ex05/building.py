@@ -39,9 +39,12 @@ def main():
         return 1
     elif len(args) == 0:
         args = [""]
-        args[0] = input("What is the text to count?\n")
-        args[0] += "\n"
-        print("The text contains %d characters:" % len(args[0]))
+        try:
+            args[0] = input("What is the text to count?\n")
+            args[0] += "\n"
+        except EOFError:
+            pass
+    print("The text contains %d characters:" % len(args[0]))
     print("%s upper letters" % sum(1 for c in args[0] if c.isupper()))
     print("%s lower letters" % sum(1 for c in args[0] if c.islower()))
     print("%s punctuation marks" % sum(1 for c in args[0] if ispunctuation(c)))
