@@ -1,5 +1,5 @@
 import sys
-import ft_filter
+from ft_filter import ft_filter
 
 
 def wordGreater(word, min_len):
@@ -47,7 +47,7 @@ Returns:
         print("AssertionError: the arguments are bad")
         return
     try:
-        i = int(args[1])
+        n = int(args[1])
     except ValueError:
         print("AssertionError: the arguments are bad")
         return
@@ -55,7 +55,8 @@ Returns:
         print("AssertionError: the arguments are bad")
         return
     words = args[0].split()
-    print(list(ft_filter.ft_filter(lambda seq: wordGreater(seq, i), words)))
+    res = [word for word in words if (lambda w: len(w) > n)(word)]
+    print(res)
 
 
 if __name__ == "__main__":
